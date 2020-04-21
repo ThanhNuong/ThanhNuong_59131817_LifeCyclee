@@ -1,0 +1,28 @@
+
+TRẢ LỜI CÂU HỎI
+
+4. Cho biết các phương thức vòng đời được gọi khi ứng dụng đang chạy và người sử
+dụng bấm vào nút back sau đó mở lại ứng dụng.
+
+Trả lời:
+-  Phương thức onPause ->Phương thức onStop->Phương thức onDestroy->Phương thức onCreate ->Phương thức onStart->Phương thức onResume
+
+5. Cho biết các phương thức vòng đời được gọi khi ứng dụng đang chạy và người sử
+dụng bấm vào nút home và sau đó mở lại ứng dụng.
+
+Trả lời:
+- Phương thức onPause -> phương thức onStop -> phương thức onRestart -> phương thức onStart -> phương thức onResume
+
+6. Nếu cần lưu thông tin của ứng dụng để khôi phục lại trạng thái hiển thị của ứng dụng khi chạy lại ứng dụng thì cần phải thực hiện
+ trong phương thức vòng đời nào? vì sao?
+
+Trả lời:
+- Phương thức onPause -> Phương thức onStop -> Phương thức onDestroy -> Phương thức onCreate -> Phương thức onStart
+ ->Phương thức onResume ->Phương thức onPause ->Phương thức onStop ->Phương thức onDestroy  ->Phương thức onCreate-> onStart
+ ->Phương thức onResume
+-Khi ứng dụng đang chạy ta xoay ngang màn hình thì phương thức onPause được gọi đến activity đó để lưu dữ liệu cần giữ lại
+ trước khi tiến trình bị hủy. Và activity đó không còn được thấy nữa nên gọi phương thức onStop và nó kết thúc activity
+ với màn hình dọc (phương thức onDestroy). Sau khi mà hình xoay ngang thì một activity mới được tạo ra với các phương thức mới
+  được gọi onCreate-> onStart->onResume để tiến hành activity mới với màn hình ngang. Sau đó ta xoay dọc màn hình lại thì
+  ứng dụng tiếp tục thực hiện các phương thức onPause -> Phương thức onStop ->Phương thức onDestroy để kết thúc phiên làm việc
+   với màn hình ngang và tiếp tục với activity màn hình như lúc đầu
